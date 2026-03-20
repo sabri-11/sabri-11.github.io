@@ -84,12 +84,17 @@ select {
 .utility-inner p {
   margin: 0;
   font-weight: 700;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .utility-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px 18px;
 }
 
 .utility-links a {
@@ -1026,6 +1031,11 @@ select {
   .utility-inner,
   .footer-bottom {
     gap: 10px;
+  }
+
+  .utility-links {
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
 }
 
