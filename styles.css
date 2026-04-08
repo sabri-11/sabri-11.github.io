@@ -20,6 +20,8 @@
   --radius-sm: 10px;
   --max-width: 1220px;
   --font-main: "IBM Plex Sans", "Trebuchet MS", "Segoe UI", sans-serif;
+  --site-overlay: rgba(251, 249, 248, 0.84);
+  --site-overlay-warm: rgba(247, 235, 231, 0.72);
 }
 
 * {
@@ -33,9 +35,17 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  min-height: 100vh;
   color: var(--ink);
   font-family: var(--font-main);
-  background: var(--surface-soft);
+  background-color: #f4eee7;
+  background-image:
+    linear-gradient(180deg, var(--site-overlay) 0%, rgba(244, 238, 231, 0.9) 100%),
+    url("assets/site-background.svg");
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  background-attachment: fixed, fixed;
 }
 
 a {
@@ -106,7 +116,7 @@ select {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(255, 255, 255, 0.84);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(10px);
 }
@@ -271,8 +281,32 @@ select {
 }
 
 .home-hero {
+  position: relative;
+  overflow: hidden;
   padding: 30px 0 0;
-  background: linear-gradient(180deg, var(--salmon-soft) 0%, #ffffff 100%);
+  background-image:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(247, 235, 231, 0.7) 100%),
+    url("assets/site-background.svg");
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  background-attachment: fixed, fixed;
+}
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(78, 120, 181, 0.2), transparent 34%),
+    radial-gradient(circle at top right, rgba(240, 140, 79, 0.22), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
+  pointer-events: none;
+}
+
+.home-hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-grid {
@@ -288,7 +322,7 @@ select {
   padding: 44px;
   border-radius: var(--radius-lg);
   background:
-    linear-gradient(180deg, #ffffff 0%, var(--salmon-soft) 100%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(247, 235, 231, 0.9) 100%);
   color: var(--ink);
   box-shadow: var(--shadow);
   border: 1px solid #e6d6cf;
@@ -447,7 +481,7 @@ select {
 .contact-primary,
 .contact-secondary {
   border: 1px solid var(--line);
-  background: var(--surface);
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: var(--shadow);
   border-top: 4px solid var(--purple);
 }
@@ -515,7 +549,8 @@ select {
 }
 
 .section-alt {
-  background: var(--surface-alt);
+  background: var(--site-overlay-warm);
+  backdrop-filter: blur(6px);
 }
 
 .section-heading {
@@ -664,8 +699,9 @@ select {
 .page-hero {
   padding: 36px 0 24px;
   background:
-    linear-gradient(180deg, #ffffff 0%, var(--salmon-soft) 100%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78) 0%, rgba(247, 235, 231, 0.72) 100%);
   border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(6px);
 }
 
 .breadcrumb {
@@ -875,8 +911,9 @@ select {
 
 .site-footer {
   padding: 36px 0 22px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.8);
   border-top: 1px solid var(--line);
+  backdrop-filter: blur(8px);
 }
 
 .footer-grid {
@@ -977,7 +1014,7 @@ select {
     align-items: stretch;
     gap: 18px;
     padding: 20px;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.94);
     border-bottom: 1px solid var(--line);
     box-shadow: var(--shadow);
   }
@@ -1037,6 +1074,14 @@ select {
   .utility-links {
     flex-wrap: wrap;
     justify-content: flex-start;
+  }
+
+  body {
+    background-attachment: scroll, scroll;
+  }
+
+  .home-hero {
+    background-attachment: scroll, scroll;
   }
 }
 

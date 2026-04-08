@@ -1,0 +1,37 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="80" y1="40" x2="1520" y2="1120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#EAF1F9"/>
+      <stop offset="0.45" stop-color="#F7ECE4"/>
+      <stop offset="1" stop-color="#D9E4F3"/>
+    </linearGradient>
+    <radialGradient id="glow-blue" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(260 220) rotate(90) scale(360)">
+      <stop stop-color="#4E78B5" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#4E78B5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-orange" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1320 230) rotate(90) scale(300)">
+      <stop stop-color="#F08C4F" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#F08C4F" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-soft" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1230 930) rotate(90) scale(440)">
+      <stop stop-color="#345F95" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#345F95" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="88" height="88" patternUnits="userSpaceOnUse">
+      <path d="M88 0H0V88" stroke="#FFFFFF" stroke-opacity="0.28" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <rect width="1600" height="1200" fill="url(#grid)"/>
+
+  <circle cx="260" cy="220" r="360" fill="url(#glow-blue)"/>
+  <circle cx="1320" cy="230" r="300" fill="url(#glow-orange)"/>
+  <circle cx="1230" cy="930" r="440" fill="url(#glow-soft)"/>
+
+  <path d="M-140 1210L520 460" stroke="#FFFFFF" stroke-opacity="0.24" stroke-width="160"/>
+  <path d="M840 1280L1510 610" stroke="#3D6CA6" stroke-opacity="0.12" stroke-width="128"/>
+
+  <path d="M0 810C165 715 305 672 476 687C646 702 741 844 937 832C1133 820 1261 628 1600 552V1200H0V810Z" fill="#FFFFFF" fill-opacity="0.34"/>
+  <path d="M0 952C212 886 412 884 577 950C763 1024 906 1168 1216 1142C1345 1132 1476 1082 1600 1018V1200H0V952Z" fill="#F7EBE7" fill-opacity="0.62"/>
+</svg>
